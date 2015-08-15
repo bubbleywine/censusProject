@@ -1,0 +1,100 @@
+{
+  "ColoradoCounties": {
+    "Adams County": [{
+      "language": "English",
+      "value": "296815"
+    }, {
+      "language": "Spanish",
+      "value": "95462"
+    }, {
+      "language": "Indo-European",
+      "value": "7535"
+    }, {
+      "language": "Asian and Pacific Islands",
+      "value": "11894"
+    }, {
+      "language": "Other",
+      "value": "2703"
+    }],
+    "Arapahoe County": [{
+      "language": "English",
+      "value": "424635"
+    }, {
+      "language": "Spanish",
+      "value": "66568"
+    }, {
+      "language": "Indo-European",
+      "value": "21015"
+    }, {
+      "language": "Asian and Pacific Islands",
+      "value": "20507"
+    }, {
+      "language": "Other",
+      "value": "12207"
+    }],
+    "Broomfield County": [{
+      "language": "English",
+      "value": "45969"
+    }, {
+      "language": "Spanish",
+      "value": "3574"
+    }, {
+      "language": "Indo-European",
+      "value": "1627"
+    }, {
+      "language": "Asian and Pacific Islands",
+      "value": "2019"
+    }, {
+      "language": "Other",
+      "value": "137"
+    }],
+    "Denver County": [{
+      "language": "English",
+      "value": "420689"
+    }, {
+      "language": "Spanish",
+      "value": "116741"
+    }, {
+      "language": "Indo-European",
+      "value": "15390"
+    }, {
+      "language": "Asian and Pacific Islands",
+      "value": "13957"
+    }, {
+      "language": "Other",
+      "value": "8382"
+    }],
+    "Elbert County": [{
+      "language": "English",
+      "value": "21084"
+    }, {
+      "language": "Spanish",
+      "value": "651"
+    }, {
+      "language": "Indo-European",
+      "value": "405"
+    }, {
+      "language": "Asian and Pacific Islands",
+      "value": "53"
+    }, {
+      "language": "Other",
+      "value": "36"
+    }],
+    "Jefferson County": [{
+      "language": "English",
+      "value": "458307"
+    }, {
+      "language": "Spanish",
+      "value": "29852"
+    }, {
+      "language": "Indo-European",
+      "value": "12988"
+    }, {
+      "language": "Asian and Pacific Islands",
+      "value": "8010"
+    }, {
+      "language": "Other",
+      "value": "1667"
+    }]
+  }
+}

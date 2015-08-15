@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+
+  <!-- style sheet stuff goes here (@import preferred, but not required) -->
+  <style type='text/css'>
+    @import url('scripts/jquery.jqplot.css');
+  </style>
+  <!-- inclusion of jquery -->
+  <link rel="stylesheet" href="styles/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="styles/jquery-ui.min.css">
+  <link rel="stylesheet" href="styles/jquery-ui.theme.css">
+  <script type='text/javascript' language='javascript' src='scripts/jquery-2.1.4.js'></script>
+
+  <!-- // <script src="scripts/jquery-ui.min.js"></script> -->
+  <script type='text/javascript' language='javascript' src='scripts/jquery.jqplot.js'></script>
+
+  <script type='text/javascript' language='javascript' src='scripts/jquery-2.1.4.js'></script>
+  <script src="scripts/jquery-ui.min.js"></script>
+  <script type='text/javascript' language='javascript' src='scripts/jquery.jqplot.js'></script>
+  <script type='text/javascript' language='javascript' src='scripts/plugins/jqplot.canvasAxisTickRenderer.js'></script>
+  <script type='text/javascript' language='javascript' src='scripts/plugins/jqplot.categoryAxisRenderer.js'></script>
+  <script type='text/javascript' language='javascript' src='scripts/plugins/jqplot.barRenderer.js'></script>
+  <script type='text/javascript' language='javascript' src='scripts/plugins/jqplot.logAxisRenderer.js'></script>
+  <script type='text/javascript' language='javascript' src='scripts/plugins/jqplot.canvasTextRenderer.min.js'></script>
+
+
+  <script type="text/javascript" src="jscrap.js" language='javascript'></script>
+  <script type="text/javascript" src="tableSort.js" language='javascript'></script>
+  <script type='text/javascript' language='javascript' src=projectv2.js></script>
+
+
+  <script type='text/javascript' language='javascript' src=scripts/plugins/jqplot.pieRenderer.min.js></script>
+
+
+
+  <style>
+
+
+
+    #Lorems {
+      left: 20em;
+      width: 800px;
+    }
+
+    #acord {
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    #acord .ui-accordion-header {
+      margin: 0px;
+    }
+
+    .MonkeyBurrito {
+      background-color: hsl(50, 60%, 71%);
+
+      font-weight: bold;
+      font-size: 1.2em;
+      color: hsl(193, 97%, 17%);
+    }
+
+    body {
+      width: 100%;
+    }
+
+    input,
+    button {
+      position: fixed;
+      border: none;
+      background-color: red;
+      style: none;
+      left: 30em;
+    }
+
+    table{
+      width: 1000px;
+    }
+    th,
+    td {
+      /*background-color: blue;*/
+      border: 1px solid hsl(193, 5%, 48%);
+      text-align: center;
+    }
+
+    #table tr:nth-child(even) {
+      background-color: hsl(55, 47%, 64%);
+      }
+    #table tr:nth-child(odd) {
+      background-color: hsl(60, 69%, 78%);
+      }
+
+
+    #header {
+      margin: auto;
+      padding-left: 5.5em;
+      font-size: 5em;
+    }
+
+    #barTable {
+      padding-left: 16.5em;
+    }
+
+    #srtTable {
+      padding-left: 18.5em;
+    }
+
+    #message {
+      background-color: hsl(180, 1%, 70%);
+      padding-bottom: 5px;
+      padding-top: 25px;
+    }
+
+    table {
+      width: 100px;
+      margin: auto;
+    }
+
+    #Lorems {
+      background-color: red;
+    }
+    /*#Lorems { width: 150px; height: 150px; padding: 0.5em; }
+#Lorems h3 { text-align: center; margin: 0; }*/
+  </style>
+
+  <script>
+
+  </script>
+
+
+</head>
+
+<body>
+  <!-- <button onclick="myFunction()">Print this page</button> -->
+
+  <h1 id="header" class="ui-widget-header" style="margin-top:5px:width:100%">Census Statistics</h1>
+  <div id='message'>
+    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+  </div>
+  <div id="acord">
+
+    <h1>Adams County Spoken Language</h1>
+    <div id='chart1' style="width:fill;height:30em;">
+    </div>
+    <h1>Arapahoe County Spoken Language</h1>
+    <div id='chart2' style="width:fill;height:30em;"></div>
+
+    <h1>Broomfield County Spoken Language</h1>
+    <div id='chart3' style="width:fill;height:30em;"></div>
+
+    <h1>Denver County Spoken Language</h1>
+    <div id='chart4' style="width:fill;height:30em;"></div>
+
+    <h1>Jefferson County Spoken Language</h1>
+    <div id='chart5' style="width:fill;height:30em;"></div>
+
+    <h1>Elbert County Spoken Language</h1>
+    <div id='chart6' style="width:fill;height:30em;"></div>
+  </div>
+
+  <h1 id="barTable">Language Spoken At Home </h1>
+  <div id='chart7' style="width:fill;height:30em;"></div>
+
+  <h1 id="srtTable">Sortable Table</h1>
+  <div id='chart8' style="width:fill;height:30em;">
+    <div id="Lorems" class="ui-widget-content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</div>
+    <!-- <input id="btnTestIt" type="button" value="Show Value"> -->
+
+
+
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th>employees</th>
+          <th> Population</th>
+          <th>Veterans, 2009-2013</th>
+          <th>High school graduate or higher 2009-2013</th>
+          <th>Total employment, 2013</th>
+        </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+
+
+</body>
+
+</html>

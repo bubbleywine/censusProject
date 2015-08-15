@@ -1,0 +1,30 @@
+{
+  "langugeAtHome": [{
+    "language": "English only",
+    "amount": "231122908"
+  }, {
+    "language": "Spanish",
+    "amount": "37458624"
+  }, {
+    "language": "Spanish Only",
+    "amount": "16344473"
+  }, {
+    "language": "Indo-European",
+    "amount": "10737607"
+  }, {
+    "language": "Indo-European Only",
+    "amount": "3424558"
+  }, {
+    "language": "Asian and Pacific Islander languages",
+    "amount": "9539099"
+  }, {
+    "language": "Asian and Pacific Islander languages Only",
+    "amount": "4570035"
+  }, {
+    "language": "Other",
+    "amount": "2626244"
+  }, {
+    "language": "Other Only",
+    "amount": "809834"
+  }]
+}

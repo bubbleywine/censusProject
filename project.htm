@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles/jquery-ui.structure.min.css">
+  <link rel="stylesheet" href="styles/jquery-ui.min.css">
+  <link rel="stylesheet" href="styles/jquery-ui.theme.css">
+  <link rel="stylesheet" type="text/css" href="project.css">
+  <script src="scripts/jquery-2.1.0.min.js"></script>
+  <script src="scripts/jquery-ui.min.js"></script>
+  <script src="scripts/parsley.js"></script>
+  <script src="project.js"></script>
+  <script src="global.js"></script>
+
+
+  <style>
+
+  </style>
+
+  <script>
+    function getCityNames(returnedData, status) {
+      var cityArray = new Array();
+
+      $.each(returnedData.citiesName, function(obj, currentElement) {
+        for (i in currentElement.cities) {
+          if (txtState.value == currentElement.state) {
+            cityArray.push(currentElement.cities[i]);
+          }
+
+          //end if
+        }
+      });
+
+      $("#txtCity").autocomplete({
+        source: cityArray
+      });
+    }
+
+
+
+
+    function getStateNames(returnedData, status) {
+      var statesArray = new Array();
+
+      $.each(returnedData.citiesName, function(obj, currentElement) {
+        statesArray.push(currentElement.state);
+      });
+
+
+      var option = '';
+      for (var i = 0; i < statesArray.length; i++) {
+        option += '<option value="' + statesArray[i] + '">' + statesArray[i] + '</option>';
+      }
+      $('#txtState').append(option);
+    }
+
+
+
+
+  </script>
+</head>
+
+<body>
+  <h1 class="ui-widget-header" style="margin-top:5px">Procorp XYZ</h1>
+
+  <form name="personalInfo" id="personalInfo"  class="ui-widget ui-corner-all">
+    <div id="acord">
+      <!-- personal info -->
+      <h4 class="ui-widget-header" style="margin-top:5px">Personal Information</h4>
+      <div>
+        <label for="txtFirstName">First Name:</label>
+        <input type="text" id="txtFirstName" name="txtFirstName" placeholder="FirstName" pattern="/^[a-z ,.'-]+$/i" required>
+        <br>
+        <label for="txtMiddleI">Middle Initial:</label>
+        <input type="text" id="txtMiddleI" name="txtMiddleI" required>
+        <br>
+        <label for="txtLastName">Last Name:</label>
+        <input type="text" id="txtLastName" name="" placeholder="LastName" pattern="/^[a-z ,.'-]+$/i" required>
+        <br>
+        <label for="txtAge">Age:</label>
+        <input type="text" id="txtAge" readonly="true" name="txtAge" value="21" required>
+        <br>
+        <label for="txtBirtDate" disabled="true">Birth Date:</label>
+        <input type="text" id="txtBirtDate" readonly="true" name="txtBirtDate" required>
+        <br>
+        <label for="sexRadio">Sex:</label>
+        <div id="sexRadio">
+          <input type="radio" id="mlae" name="radio"> Male
+          <input type="radio" id="female" name="radio" checked="checked">Female
+
+          <input type="radio" id="noResponse" name="radio" checked="checked">No Response
+        </div>
+        <br>
+        <br>
+        <h4 class="ui-widget-header" style="margin-top:5px">Address</h4>
+        <label for="txtState">State:</label>
+        <select id="txtState">
+        </select>
+        <br>
+        <label for="txtCity">City:</label>
+        <input type="text" id="txtCity" name="txtCity">
+        <br>
+        <label for="txtZip">Zip:</label>
+        <input id="txtZip" name="txtZip" type="text" placeholder="Zip Code"pattern="^\d{5}(?:[-\s]\d{4})?$" required/>
+        <label for="txtStreet">Street Name:</label>
+        <input type="text" id="txtStreet" name="StreetName" pattern="[A-Za-z0-9'\.\-\s\,]" required>
+        <br>
+        <br>
+      </div>
+      <!-- house hold info -->
+      <h4 class="ui-widget-header" style="margin-top:5px">Household Information</h4>
+      <div>
+        <label for="txtNumberOfPeople">Persons in household:</label>
+        <input type="text" id="txtNumberOfPeople" name="txtNumberOfPeople" value="3">
+        <br>
+        <label for="txtHouseStyle">Household Stle:</label>
+        <select>
+          <option>Please select one</option>
+          <option>Mobile home</option>
+          <option>One-family house detached</option>
+          <option>One-family house attached to two or more</option>
+          <option>An apartment or condo building</option>
+          <option>A boat, RV, van etc</option>
+        </select>
+        <br>
+        <!-- do they rent to change mortgage rardio -->
+        <label for="radio">Rent or Own:</label>
+        <div id="radio">
+          <input type="radio" id="rent" value="Rent" name="rentOwn"> Rent
+          <input type="radio" id="own" name="rentOwn" value="Own">Own
+        </div>
+        <br>
+        <!-- if they have a mortgage to change which monthly cost -->
+        <div id="mortgageDiv" style="display:none">
+          <label for="radio">Morgage</label>
+          <input type="radio" id="yes" value="Yes" name="mortgage"> Yes
+          <input type="radio" id="no" value="No" name="mortgage" checked="checked">No
+          <br>
+          <br>
+        </div>
+        <!-- cost with mortgage -->
+        <div id="monthMortgage" style="display:none">
+          <label for="amount">Monthly Cost1</label>
+          <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+          <div id="monthCostMortgage" name="monthCostMortgage"></div>
+        </div>
+
+        <!-- cost with out mortgage -->
+        <div id="monthNoMortgage" style="display:none">
+
+          <label for="monthCostNoMortgage">Monthly Cost2</label>
+          <input type="text" id="amount2" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+          <div id="monthCostNoMortgage" name="monthCostNoMortgage"></div>
+        </div>
+        <!-- cost in rent -->
+        <div id="monthRentDiv" style="display:none">
+          <label for="monthCostRent">Monthly Cost3</label>
+          <input type="text" id="amount3" readonly style="border:0; color:#f6931f; font-weight:bold;" />
+          <div id="monthCostRent" name="monthCostRent"></div>
+        </div>
+
+
+        <br>
+        <label for="txtBirtDate" disabled="true">Primary language spoken:</label>
+        <select>
+          <option>Please select one</option>
+          <option>English</option>
+          <option>Spanish</option>
+          <option>French</option>
+          <option>Other</option>
+        </select>
+        <br>
+
+      </div>
+      <!-- employment info -->
+      <h4 class="ui-widget-header" style="margin-top:5px">Employment</h4>
+      <div>
+        <label for="over16Emp">How many individuals residing in the household over the age of 16 are employed:</label>
+        <input type="text" id="over16Emp" readonly="true" name="over16Emp" value"0">
+        <br>
+        <br>
+        <br>
+        <br>
+        <label for="travelTime" disabled="true">Treavel time to work(Hours):</label>
+        <input type="text" id="travelTime" readonly="true" name="travelTime" value="1">
+        <br>
+        <br>
+        <label for="departTime" disabled="true">Typical departure time to work:</label>
+        <input type="text" id="departTimeMin" readonly="true" name="departTimeMin">
+        <br>
+        <br>
+        <label for="ariveTime" disabled="true">Typical arrival time from work:</label>
+        <input type="text" id="ariveTime" name="ariveTime">
+        <br>
+        <br> Employment History:
+        <ul id="departmentNames">
+          <li>Marketing</li>
+          <li>Sales</li>
+          <li>Development</li>
+          <li>Implementation</li>
+          <li>Production Support</li>
+          <li>Customer Support</li>
+        </ul>
+        <br>
+
+      </div>
+      <!-- Banking info -->
+      <h4 class="ui-widget-header" style="margin-top:5px">Banking Preferences:</h4>
+      <div>
+        <label for="methodOfBanking">Preferred method of banking:</label>
+        <select>
+          <option>At the branch</option>
+          <option>Web browser</option>
+          <option>Mobile device</option>
+        </select>
+        <br>
+        <br>
+        <label for="choiceOfBank">Current Bank:</label>
+        <select>
+          <option>Procorp XYZ</option>
+          <option>ColoradoR</option>
+          <option>DenverB</option>
+          <option>StateBank</option>
+          <option>NationalBank</option>
+          <option>InternationalFunds</option>
+        </select>
+        <br>
+        <br>
+        <label for="bankVisit" disabled="true">Frequency of visit to bank:</label>
+        <input type="text" id="bankVisit" readonly="true" name="bankVisit" value="1">
+        <br>
+        <br>
+        <label for="servicesUsed" disabled="true">Services currently used (check all that apply):</label>
+        <br>
+        <input type="checkbox" name="services" value="deposits" checked="checked"> deposits
+        <input type="checkbox" name="services" value="balances"> balances
+        <input type="checkbox" name="services" value="investment"> investment<br>
+        <input type="checkbox" name="services" value="payingBills"> paying bills
+        <input type="checkbox" name="services" value="transferringMoney"> transferring money
+        <input type="checkbox" name="services" value="financialPlanning"> financial planning<br>
+        <input type="checkbox" name="services" value="mortgageLoan"> mortgage or personal loan
+        <br>
+        <br>
+      </div>
+    </div>
+    <input id="button" type="submit" value="Submit" />
+    <br>
+  </form>
+  <h1 class="ui-widget-header" style="margin-top:5px">Procorp XYZ</h1>
+
+  <br>
+  <br>
+
+</body>
+
+</html>
