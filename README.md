@@ -1,1 +1,1 @@
-Clikc on project or project v2 and run in fire fox so the ajax calls work
+Clikc on census.html or form.html and run in firefox so the ajax calls work
